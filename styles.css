@@ -59,11 +59,10 @@ body {
 }
 
 .logo-img {
-    height: 90px;
+    height: 108px;
     width: auto;
     object-fit: contain;
     mix-blend-mode: multiply;
-    /* Removes logo background if white */
 }
 
 .nav {
