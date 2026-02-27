@@ -1,17 +1,25 @@
 :root {
+    /* Color Palette */
     --soft-purple: #D9A7EB;
-    /* Main Background from Insta post */
     --deep-purple: #7B4CC8;
-    /* Accent Text */
     --retro-orange: #FF8C42;
-    /* Logo/Accent */
     --gold-yellow: #FFCB42;
-    /* New Gold for buttons */
     --bright-pink: #FF4D6D;
-    --accent-gold: #FFCB42;
+    /* Mapping missing/inconsistent variables */
+    --primary-orange: var(--retro-orange);
+    --accent-gold: var(--gold-yellow);
+    --accent-yellow: var(--gold-yellow);
+    --primary-pink: var(--bright-pink);
+
     --text-dark: #2D1B36;
     --text-light: #ffffff;
     --font-main: 'Outfit', sans-serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 * {
@@ -139,13 +147,12 @@ body {
 }
 
 .hero-title {
-    font-size: 6rem;
-    /* Larger font size as per reference */
-    line-height: 0.9;
-    margin-bottom: 1rem;
+    font-size: clamp(3rem, 12vw, 6rem);
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
     font-weight: 900;
     text-transform: uppercase;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .highlight {
@@ -303,7 +310,7 @@ body {
 }
 
 .section-header h2 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
     color: white;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
@@ -333,8 +340,8 @@ body {
 }
 
 .contact-section h2 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    margin-bottom: 1.5rem;
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -407,39 +414,64 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        gap: 1rem;
-        position: relative;
-        /* Unstick on mobile for better layout */
-        background-color: var(--primary-orange);
+        padding: 1rem 5%;
+        background-color: transparent;
+    }
+
+    .logo-container {
+        width: 80px;
+        height: 80px;
+        padding: 8px;
+    }
+
+    .logo-img {
+        height: 64px;
     }
 
     .nav {
-        flex-direction: row;
-        /* Keep social links in row */
-        gap: 1rem;
+        gap: 0.8rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 
     .hero {
-        padding-top: 2rem;
+        padding: 8rem 5% 4rem;
+        text-align: center;
+        justify-content: center;
     }
 
-    .hero-title {
-        font-size: 3rem;
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .info-grid {
+        padding: 4rem 5%;
+    }
+
+    .info-card {
+        padding: 2rem;
+    }
+
+    .location-section,
+    .contact-section {
+        padding: 4rem 5%;
     }
 
     .hero-visual {
-        height: 300px;
-        margin-top: 2rem;
+        height: 250px;
+        margin-top: 1rem;
     }
 
     .spinning-hoop.hoop-1 {
-        width: 280px;
-        height: 280px;
+        width: 240px;
+        height: 240px;
     }
 
     .spinning-hoop.hoop-2 {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
     }
 }
