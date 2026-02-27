@@ -1,14 +1,15 @@
 :root {
-    --primary-orange: #FF8C42;
-    /* Vibrant Orange */
-    --primary-pink: #FF69B4;
-    /* Hot Pink */
-    --accent-yellow: #FFD700;
-    /* Gold/Yellow */
-    --accent-lilac: #C8A2C8;
-    /* Lilac */
-    --text-dark: #2c0b1b;
-    /* Darker text for contrast */
+    --soft-purple: #D9A7EB;
+    /* Main Background from Insta post */
+    --deep-purple: #7B4CC8;
+    /* Accent Text */
+    --retro-orange: #FF8C42;
+    /* Logo/Accent */
+    --gold-yellow: #FFCB42;
+    /* New Gold for buttons */
+    --bright-pink: #FF4D6D;
+    --accent-gold: #FFCB42;
+    --text-dark: #2D1B36;
     --text-light: #ffffff;
     --font-main: 'Outfit', sans-serif;
 }
@@ -43,15 +44,26 @@ body {
     z-index: 1000;
 }
 
-.logo-text {
-    font-weight: 900;
-    font-size: 2rem;
-    color: white;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+.logo-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    /* Perfect Circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
 }
 
-.circle-text {
-    color: var(--accent-yellow);
+.logo-img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    /* Removes logo background if white */
 }
 
 .nav {
@@ -90,30 +102,33 @@ body {
 }
 
 .cta-button {
-    background-color: var(--accent-yellow);
-    color: var(--primary-orange);
-    padding: 0.8rem 1.5rem;
+    background-color: var(--gold-yellow);
+    color: var(--deep-purple);
+    padding: 0.8rem 1.8rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 900;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
 }
 
 /* Hero Section - Block 1 */
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 8rem 5% 4rem;
-    /* More top padding for absolute header */
+    justify-content: flex-start;
+    /* Left aligned content */
+    padding: 8rem 8% 4rem;
     min-height: 90vh;
-    background-color: var(--primary-orange);
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('class_photo.jpg');
+    background-size: cover;
+    background-position: center;
     color: white;
     position: relative;
     overflow: hidden;
@@ -125,15 +140,17 @@ body {
 }
 
 .hero-title {
-    font-size: 5rem;
-    line-height: 1;
-    margin-bottom: 1.5rem;
+    font-size: 6rem;
+    /* Larger font size as per reference */
+    line-height: 0.9;
+    margin-bottom: 1rem;
     font-weight: 900;
     text-transform: uppercase;
+    max-width: 800px;
 }
 
 .highlight {
-    color: var(--accent-yellow);
+    color: var(--accent-gold);
     display: block;
 }
 
@@ -152,15 +169,20 @@ body {
 }
 
 .primary-btn {
-    background-color: white;
-    color: var(--primary-orange);
-    padding: 1rem 2.5rem;
+    background-color: var(--gold-yellow);
+    color: var(--deep-purple);
+    padding: 1.2rem 3rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 900;
-    font-size: 1.2rem;
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
 }
 
 .primary-btn:hover {
@@ -230,7 +252,7 @@ body {
 
 /* Classes Section - Block 2 */
 .info-grid {
-    background-color: var(--primary-pink);
+    background-color: var(--soft-purple);
     padding: 6rem 5%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -238,20 +260,17 @@ body {
 }
 
 .info-card {
-    background-color: rgba(255, 255, 255, 0.15);
-    /* Glassmorphic on color */
+    background-color: white;
     padding: 3rem;
     border-radius: 30px;
     text-align: center;
-    color: white;
-    border: none;
-    backdrop-filter: blur(5px);
+    color: var(--deep-purple);
+    box-shadow: 10px 10px 0px rgba(123, 76, 200, 0.2);
     transition: transform 0.3s ease;
 }
 
 .info-card:hover {
     transform: translateY(-10px) rotate(1deg);
-    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .card-icon {
@@ -277,7 +296,8 @@ body {
 
 /* Location Section - Block 3 */
 .location-section {
-    background-color: var(--accent-lilac);
+    background-color: #81C784;
+    /* Soft Sage Green */
     padding: 6rem 5%;
     text-align: center;
     color: white;
@@ -307,10 +327,10 @@ body {
 
 /* Contact Section - Block 4 */
 .contact-section {
-    background-color: var(--accent-yellow);
+    background-color: var(--soft-purple);
     padding: 6rem 5%;
     text-align: center;
-    color: var(--primary-orange);
+    color: var(--deep-purple);
 }
 
 .contact-section h2 {
@@ -365,13 +385,13 @@ body {
 .big-btn {
     font-size: 1.5rem;
     padding: 1.5rem 4rem;
-    background-color: var(--primary-orange);
+    background-color: var(--retro-orange);
     color: white;
     box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
 .big-btn:hover {
-    background-color: var(--primary-pink);
+    background-color: var(--deep-purple);
     color: white;
     transform: scale(1.05);
 }
@@ -380,7 +400,7 @@ body {
 .footer {
     text-align: center;
     padding: 2rem;
-    background-color: var(--primary-orange);
+    background-color: var(--deep-purple);
     color: white;
     font-weight: 700;
 }
