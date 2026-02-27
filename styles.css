@@ -419,13 +419,13 @@ body {
     }
 
     .logo-container {
-        width: 80px;
-        height: 80px;
-        padding: 8px;
+        width: 100px;
+        height: 100px;
+        padding: 0;
     }
 
     .logo-img {
-        height: 64px;
+        height: 100px;
     }
 
     .nav {
